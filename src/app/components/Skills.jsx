@@ -5,6 +5,7 @@ import {
   FaNodeJs,
   FaJsSquare,
   FaGitAlt,
+  FaHtml5,
 } from 'react-icons/fa';
 import {
   SiNextdotjs,
@@ -13,23 +14,27 @@ import {
   SiExpress,
   SiMongodb,
   SiPostgresql,
+  SiJsonwebtokens,
 } from 'react-icons/si';
+import { TbShieldCheck } from 'react-icons/tb';
 
 const skills = [
+  { name: 'HTML5', icon: FaHtml5, color: 'text-orange-600' },
+  { name: 'JavaScript', icon: FaJsSquare, color: 'text-yellow-400' },
+  // { name: 'TypeScript', icon: SiTypescript, color: 'text-blue-500' },
   { name: 'React.js', icon: FaReact, color: 'text-cyan-400' },
   { name: 'Next.js', icon: SiNextdotjs, color: 'text-white' },
-  { name: 'JavaScript', icon: FaJsSquare, color: 'text-yellow-400' },
-  { name: 'TypeScript', icon: SiTypescript, color: 'text-blue-500' },
   { name: 'Tailwind CSS', icon: SiTailwindcss, color: 'text-sky-400' },
   { name: 'Node.js', icon: FaNodeJs, color: 'text-green-500' },
   { name: 'Express.js', icon: SiExpress, color: 'text-slate-300' },
   { name: 'MongoDB', icon: SiMongodb, color: 'text-emerald-500' },
-  { name: 'PostgreSQL', icon: SiPostgresql, color: 'text-blue-400' },
+  // { name: 'PostgreSQL', icon: SiPostgresql, color: 'text-blue-400' },
+  { name: 'Better Auth', icon: TbShieldCheck, color: 'text-teal-400' },
+  { name: 'JWT', icon: SiJsonwebtokens, color: 'text-pink-500' },
   { name: 'Git & GitHub', icon: FaGitAlt, color: 'text-orange-500' },
 ];
 
 export default function Skills() {
-  // Smooth looping-এর জন্য তালিকাটি দ্বিগুণ করা হলো
   const duplicatedSkills = [...skills, ...skills];
 
   return (
