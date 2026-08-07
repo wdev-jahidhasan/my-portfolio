@@ -9,9 +9,9 @@ const navLinks = [
 ];
 
 const socialLinks = [
-  { name: 'GitHub', href: 'https://github.com/yourusername' },
-  { name: 'LinkedIn', href: 'https://linkedin.com/in/yourusername' },
-  { name: 'Twitter / X', href: 'https://twitter.com/yourusername' },
+  { name: 'GitHub', href: 'https://github.com/wdev-jahidhasan' },
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/in/wdev-jahidhasan' },
+  // { name: 'Twitter / X', href: 'https://twitter.com/yourusername' },
 ];
 
 export default function Footer() {

@@ -17,7 +17,7 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // এখানে আপনার ফর্ম সাবমিশন লজিক (যেমন Formspree বা API Route) যোগ করতে পারেন
+    // Form submission logic will be added
     alert('Thank you! Your message has been sent.');
     setFormData({ name: '', email: '', subject: '', message: '' });
   };
@@ -36,7 +36,7 @@ export default function Contact() {
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-teal-400 to-orange-400 mx-auto mt-4 rounded-full" />
           <p className="text-slate-400 mt-4 max-w-xl mx-auto text-sm sm:text-base">
-            Have a project in mind, a question, or just want to say hi? Feel free to drop a message!
+            Have a project in mind, a question? Feel free to drop a message!
           </p>
         </div>
 
@@ -59,8 +59,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-xs text-slate-400">Mail me at</p>
-                  <a href="mailto:your.email@example.com" className="text-sm font-semibold text-slate-200 hover:text-teal-400 transition-colors">
-                    your.email@example.com
+                  <a href="mailto:wdev.jahidhasan@gmail.com" className="text-sm font-semibold text-slate-200 hover:text-teal-400 transition-colors">
+                    wdev.jahidhasan@gmail.com
                   </a>
                 </div>
               </div>
@@ -85,7 +85,7 @@ export default function Contact() {
               </p>
               <div className="flex space-x-3">
                 <a
-                  href="https://github.com"
+                  href="https://github.com/wdev-jahidhasan"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 bg-slate-900/80 hover:bg-slate-800 border border-slate-800 rounded-xl text-slate-300 hover:text-teal-400 transition duration-200"
@@ -94,7 +94,7 @@ export default function Contact() {
                   <FaGithub className="text-lg" />
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/wdev-jahidhasan"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 bg-slate-900/80 hover:bg-slate-800 border border-slate-800 rounded-xl text-slate-300 hover:text-teal-400 transition duration-200"
@@ -102,7 +102,7 @@ export default function Contact() {
                 >
                   <FaLinkedin className="text-lg" />
                 </a>
-                <a
+                {/* <a
                   href="https://twitter.com"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -110,7 +110,7 @@ export default function Contact() {
                   aria-label="Twitter"
                 >
                   <FaTwitter className="text-lg" />
-                </a>
+                </a> */}
               </div>
             </div>
           </div>
