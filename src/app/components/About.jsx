@@ -1,17 +1,21 @@
 'use client';
 
+import { motion } from 'framer-motion';
+
 export default function About() {
   const highlights = [
     'Clean Code Architecture',
     'Responsive & Pixel-Perfect Design',
     'Modern Web Technologies',
-    'RESTful API & Database Design',
+    '10+ Completed Projects',
   ];
+
+  const titleText = "My Coding Journey";
 
   return (
     <section id="about" className="py-20 bg-slate-950 text-white relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Heading */}
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
@@ -24,19 +28,37 @@ export default function About() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
-          {/* Left Column: Brief Bio & Highlights */}
+
+          {/* Left Column: Bio & Programming Hero Journey */}
           <div className="lg:col-span-6 space-y-6 text-slate-300">
-            <h3 className="text-2xl font-bold text-white">
-              Passionate Web Developer Crafting Digital Experiences
+
+            {/* Perfect Infinite Typeforward Animated Title */}
+            <h3 className="text-2xl sm:text-3xl font-bold text-white flex flex-wrap items-center">
+              {titleText.split("").map((char, index) => (
+                <motion.span
+                  key={index}
+                  animate={{
+                    opacity: [0, 1, 1, 0],
+                    y: [10, 0, 0, -5],
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    repeatDelay: 1,
+                    delay: index * 0.1,
+                  }}
+                >
+                  {char === " " ? "\u00A0" : char}
+                </motion.span>
+              ))}
             </h3>
 
             <p className="leading-relaxed text-slate-400">
-              Hello! I’m Jahid, a full-stack developer dedicated to building high-performance, accessible, and scalable web applications. My focus is on writing clean, maintainable code and providing smooth user experiences.
+              My tech journey started with a simple curiosity: how do modern websites and web apps actually work? To turn that curiosity into solid skills, I joined <span className="text-teal-400 font-semibold">Programming Hero</span>, which helped me build a strong foundation in Web Development.
             </p>
 
             <p className="leading-relaxed text-slate-400">
-              Whether building a complex React dashboard or designing backend API endpoints, I aim for excellence in both performance and aesthetics.
+              Through hands-on projects and practice, I gained expertise in the MERN stack—building interactive UIs with React, Next and Tailwind, and creating reliable backend APIs with Node.js and MongoDB. Today, I focus on building real-world web applications that run smoothly and offer a great user experience.
             </p>
 
             {/* Highlights List */}
@@ -50,10 +72,10 @@ export default function About() {
             </div>
           </div>
 
-          {/* Right Column: IDE Code Window with Hobbies */}
+          {/* Right Column: IDE Code Window */}
           <div className="lg:col-span-6">
             <div className="w-full bg-slate-900/90 border border-slate-800 hover:border-teal-500/50 rounded-2xl shadow-2xl hover:shadow-teal-500/20 overflow-hidden backdrop-blur-md transition-all duration-300 group">
-              
+
               {/* Code Window Header */}
               <div className="bg-slate-950/80 px-4 py-3 border-b border-slate-800 group-hover:border-teal-500/30 flex items-center justify-between transition-colors duration-300">
                 <div className="flex items-center space-x-2">
@@ -70,11 +92,11 @@ export default function About() {
               {/* Code Window Body */}
               <div className="p-6 font-mono text-xs sm:text-sm leading-relaxed overflow-x-auto text-slate-300">
                 <p><span className="text-purple-400">const</span> <span className="text-amber-300">developer</span> = &#123;</p>
-                
+
                 <p className="pl-4">
                   <span className="text-teal-400">name</span>: <span className="text-emerald-300">&apos;Md. Jahid Hasan&apos;</span>,
                 </p>
-                
+
                 <p className="pl-4">
                   <span className="text-teal-400">role</span>: <span className="text-emerald-300">&apos;MERN Stack Web Developer&apos;</span>,
                 </p>
@@ -83,7 +105,16 @@ export default function About() {
                   <span className="text-teal-400">techStack</span>: [
                 </p>
                 <p className="pl-8 text-amber-200">
-                  &apos;Next.js&apos;, &apos;React&apos;, &apos;Node.js&apos;, &apos;Express.js&apos;, &apos;MongoDB&apos;, &apos;TailwindCSS&apos;
+                  &apos;Next.js&apos;, &apos;React.js&apos;, &apos;Node.js&apos;, &apos;Express.js&apos;, &apos;MongoDB&apos;, &apos;TailwindCSS&apos;, &apos;Better Auth&apos;, &apos;JWT&apos;
+                </p>
+
+                <p className="pl-4">],</p>
+
+                <p className="pl-4">
+                  <span className="text-teal-400">languages</span>: [
+                </p>
+                <p className="pl-8 text-amber-200">
+                  &apos;Bengali&apos;, &apos;English&apos;, &apos;Hindi&apos;, &apos;Urdu&apos;
                 </p>
                 <p className="pl-4">],</p>
 
@@ -91,7 +122,7 @@ export default function About() {
                   <span className="text-teal-400">hobbies</span>: [
                 </p>
                 <p className="pl-8 text-amber-200">
-                  &apos;Problem Solving&apos;, &apos;Open Source Tech&apos;, &apos;Gaming&apos;, &apos;Traveling&apos;
+                  &apos;Reading Books&apos;, &apos;Gardening&apos;, &apos;Learning Languages&apos;, &apos;Traveling&apos;
                 </p>
                 <p className="pl-4">],</p>
 
@@ -108,7 +139,6 @@ export default function About() {
                 <div className="mt-4 pt-4 border-t border-slate-800/80 group-hover:border-teal-500/30 text-slate-500 flex items-center gap-2 transition-colors duration-300">
                   <span className="text-teal-400">&gt;</span>
                   <span className="text-slate-400">Ready to build your next big idea...</span>
-                  <span className="w-2 h-4 bg-teal-400 animate-pulse inline-block" />
                 </div>
               </div>
 
