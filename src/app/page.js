@@ -1,5 +1,6 @@
 import About from "./components/About";
 import Contact from "./components/Contact";
+import Education from "./components/Education";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
@@ -12,6 +13,7 @@ export default function Home() {
       <Navbar></Navbar>
       <section id="hero" className="scroll-mt-20"><Hero></Hero></section>
       <section id="about" className="scroll-mt-20"><About></About></section>
+      <section id="about" className="scroll-mt-20"><Education></Education></section>
       <section id="skills" className="scroll-mt-20"><Skills></Skills></section>
       <section id="projects" className="scroll-mt-20"><Projects></Projects></section>
       <section id="contact" className="scroll-mt-20"><Contact></Contact></section>
