@@ -1,11 +1,197 @@
-import React from 'react';
+'use client';
 
-const Contact = () => {
+import { useState } from 'react';
+import { FaEnvelope, FaMapMarkerAlt, FaGithub, FaLinkedin, FaTwitter, FaPaperPlane } from 'react-icons/fa';
+
+export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // এখানে আপনার ফর্ম সাবমিশন লজিক (যেমন Formspree বা API Route) যোগ করতে পারেন
+    alert('Thank you! Your message has been sent.');
+    setFormData({ name: '', email: '', subject: '', message: '' });
+  };
+
   return (
-    <div>
-      CONTACT SECTION
-    </div>
-  );
-};
+    <section id="contact" className="py-20 bg-slate-950 text-white relative">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Section Heading */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
+            Get In{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-emerald-400 to-orange-400">
+              Touch
+            </span>
+          </h2>
+          <div className="w-16 h-1 bg-gradient-to-r from-teal-400 to-orange-400 mx-auto mt-4 rounded-full" />
+          <p className="text-slate-400 mt-4 max-w-xl mx-auto text-sm sm:text-base">
+            Have a project in mind, a question, or just want to say hi? Feel free to drop a message!
+          </p>
+        </div>
 
-export default Contact;
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          
+          {/* Left Column: Contact Info & Socials */}
+          <div className="lg:col-span-5 space-y-8">
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-white">Let's talk about everything!</h3>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
+              </p>
+            </div>
+
+            {/* Info Cards */}
+            <div className="space-y-4">
+              <div className="flex items-center space-x-4 p-4 rounded-xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-sm">
+                <div className="p-3 bg-teal-500/10 text-teal-400 rounded-lg text-xl">
+                  <FaEnvelope />
+                </div>
+                <div>
+                  <p className="text-xs text-slate-400">Mail me at</p>
+                  <a href="mailto:your.email@example.com" className="text-sm font-semibold text-slate-200 hover:text-teal-400 transition-colors">
+                    your.email@example.com
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-center space-x-4 p-4 rounded-xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-sm">
+                <div className="p-3 bg-orange-500/10 text-orange-400 rounded-lg text-xl">
+                  <FaMapMarkerAlt />
+                </div>
+                <div>
+                  <p className="text-xs text-slate-400">Location</p>
+                  <p className="text-sm font-semibold text-slate-200">
+                    Dhaka, Bangladesh
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Social Links */}
+            <div className="pt-2">
+              <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">
+                Connect on Socials
+              </p>
+              <div className="flex space-x-3">
+                <a
+                  href="https://github.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 bg-slate-900/80 hover:bg-slate-800 border border-slate-800 rounded-xl text-slate-300 hover:text-teal-400 transition duration-200"
+                  aria-label="GitHub"
+                >
+                  <FaGithub className="text-lg" />
+                </a>
+                <a
+                  href="https://linkedin.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 bg-slate-900/80 hover:bg-slate-800 border border-slate-800 rounded-xl text-slate-300 hover:text-teal-400 transition duration-200"
+                  aria-label="LinkedIn"
+                >
+                  <FaLinkedin className="text-lg" />
+                </a>
+                <a
+                  href="https://twitter.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 bg-slate-900/80 hover:bg-slate-800 border border-slate-800 rounded-xl text-slate-300 hover:text-teal-400 transition duration-200"
+                  aria-label="Twitter"
+                >
+                  <FaTwitter className="text-lg" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column: Contact Form */}
+          <div className="lg:col-span-7">
+            <form onSubmit={handleSubmit} className="p-8 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-sm space-y-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-xs font-medium text-slate-300 mb-2">
+                    Your Name
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    required
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="John Doe"
+                    className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-teal-500 transition duration-200"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-medium text-slate-300 mb-2">
+                    Your Email
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="john@example.com"
+                    className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-teal-500 transition duration-200"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-xs font-medium text-slate-300 mb-2">
+                  Subject
+                </label>
+                <input
+                  type="text"
+                  name="subject"
+                  required
+                  value={formData.subject}
+                  onChange={handleChange}
+                  placeholder="Project Inquiry / Hiring"
+                  className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-teal-500 transition duration-200"
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-medium text-slate-300 mb-2">
+                  Message
+                </label>
+                <textarea
+                  name="message"
+                  required
+                  rows="5"
+                  value={formData.message}
+                  onChange={handleChange}
+                  placeholder="Write your message here..."
+                  className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-teal-500 transition duration-200 resize-none"
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-teal-500 hover:bg-teal-600 text-slate-950 font-bold text-sm px-8 py-3.5 rounded-xl transition duration-200 shadow-lg shadow-teal-500/10 cursor-pointer"
+              >
+                <span>Send Message</span>
+                <FaPaperPlane className="text-xs" />
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
+}

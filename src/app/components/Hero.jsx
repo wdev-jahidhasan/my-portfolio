@@ -17,10 +17,10 @@ export default function Hero() {
             Available for new opportunities
           </div>
 
-          <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight">
-            Building<br />
+          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight">
+            Md. Jahid Hasan<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-emerald-400 to-orange-400">
-              modern web apps.
+              MERN Stack Developer
             </span>
           </h1>
 
