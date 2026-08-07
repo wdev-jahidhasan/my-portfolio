@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Hero() {
@@ -9,7 +10,7 @@ export default function Hero() {
 
       <div className="max-w-6xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
         
-        {/* Left */}
+        {/* Left Column: Intro */}
         <div className="lg:col-span-6 space-y-6 text-center lg:text-left">
           
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/30 text-teal-400 text-xs font-mono">
@@ -49,57 +50,24 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right IDE */}
-        <div className="lg:col-span-6">
-          <div className="w-full bg-slate-900/90 border border-slate-800 hover:border-teal-500/50 rounded-2xl shadow-2xl hover:shadow-teal-500/20 overflow-hidden backdrop-blur-md transition-all duration-300 group">
+        {/* Right Column: Professional Profile Image Frame */}
+        <div className="lg:col-span-6 flex justify-center">
+          <div className="relative group max-w-md w-full">
             
-            {/* Code Window Header */}
-            <div className="bg-slate-950/80 px-4 py-3 border-b border-slate-800 group-hover:border-teal-500/30 flex items-center justify-between transition-colors duration-300">
-              <div className="flex items-center space-x-2">
-                <span className="w-3 h-3 rounded-full bg-rose-500/80 inline-block" />
-                <span className="w-3 h-3 rounded-full bg-amber-500/80 inline-block" />
-                <span className="w-3 h-3 rounded-full bg-emerald-500/80 inline-block" />
-              </div>
-              <span className="text-xs font-mono text-slate-500 group-hover:text-teal-400 transition-colors duration-300">
-                developer.config.js
-              </span>
-              <div className="w-12" />
-            </div>
+            {/* Glowing Accent Layer Behind Frame */}
+            <div className="absolute -inset-1 bg-gradient-to-r from-teal-500 via-emerald-500 to-orange-500 rounded-3xl blur-xl opacity-40 group-hover:opacity-75 transition duration-500 group-hover:duration-200"></div>
 
-            {/* Code Window Body */}
-            <div className="p-6 font-mono text-xs sm:text-sm leading-relaxed overflow-x-auto text-slate-300">
-              <p><span className="text-purple-400">const</span> <span className="text-amber-300">developer</span> = &#123;</p>
-              
-              <p className="pl-4">
-                <span className="text-teal-400">name</span>: <span className="text-emerald-300">&apos;Md. Jahid Hasan&apos;</span>,
-              </p>
-              
-              <p className="pl-4">
-                <span className="text-teal-400">role</span>: <span className="text-emerald-300">&apos;MERN Stack Web Developer&apos;</span>,
-              </p>
-
-              <p className="pl-4">
-                <span className="text-teal-400">techStack</span>: [
-              </p>
-              <p className="pl-8 text-amber-200">
-                &apos;Next.js&apos;, &apos;React&apos;, &apos;Node.js&apos;, &apos;Express.js&apos;, &apos;MongoDB&apos;, &apos;TailwindCSS&apos;, &apos;HTML5&apos;
-              </p>
-              <p className="pl-4">],</p>
-
-              <p className="pl-4">
-                <span className="text-teal-400">passion</span>: <span className="text-emerald-300">&apos;Clean Code & Scalable Architecture&apos;</span>,
-              </p>
-
-              <p className="pl-4">
-                <span className="text-teal-400">hardWorker</span>: <span className="text-orange-400">true</span>,
-              </p>
-
-              <p>&#125;;</p>
-
-              <div className="mt-4 pt-4 border-t border-slate-800/80 group-hover:border-teal-500/30 text-slate-500 flex items-center gap-2 transition-colors duration-300">
-                <span className="text-teal-400">&gt;</span>
-                <span className="text-slate-400">Ready to build your next big idea...</span>
-                <span className="w-2 h-4 bg-teal-400 animate-pulse inline-block" />
+            {/* Main Image Container Frame */}
+            <div className="relative rounded-2xl bg-slate-900 p-2 border border-slate-800 shadow-2xl overflow-hidden">
+              <div className="relative aspect-square w-full rounded-xl overflow-hidden bg-slate-950">
+                <Image
+                  src="/images/hero-final.png"
+                  alt="Md. Jahid Hasan"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                  priority
+                />
               </div>
             </div>
 
