@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { FaEnvelope, FaMapMarkerAlt, FaGithub, FaLinkedin, FaTwitter, FaPaperPlane } from 'react-icons/fa';
+import toast, { Toaster } from 'react-hot-toast';
+import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt, FaGithub, FaLinkedin, FaPaperPlane, FaSpinner } from 'react-icons/fa';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -11,19 +12,46 @@ export default function Contact() {
     message: '',
   });
 
+  const [loading, setLoading] = useState(false);
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Form submission logic will be added
-    alert('Thank you! Your message has been sent.');
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    setLoading(true);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        toast.success('Thank you! Your message has been sent successfully.');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        toast.error(result.error || 'Failed to send message. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast.error('Something went wrong. Please try again later.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <section id="contact" className="py-20 bg-slate-950 text-white relative">
+      {/* Toast Notification Container */}
+      <Toaster position="bottom-right" reverseOrder={false} />
+
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}
@@ -53,6 +81,7 @@ export default function Contact() {
 
             {/* Info Cards */}
             <div className="space-y-4">
+              {/* Mail Card */}
               <div className="flex items-center space-x-4 p-4 rounded-xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-sm">
                 <div className="p-3 bg-teal-500/10 text-teal-400 rounded-lg text-xl">
                   <FaEnvelope />
@@ -65,8 +94,22 @@ export default function Contact() {
                 </div>
               </div>
 
+              {/* Phone Card */}
               <div className="flex items-center space-x-4 p-4 rounded-xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-sm">
-                <div className="p-3 bg-orange-500/10 text-orange-400 rounded-lg text-xl">
+                <div className="p-3 bg-teal-500/10 text-teal-400 rounded-lg text-xl">
+                  <FaPhoneAlt />
+                </div>
+                <div>
+                  <p className="text-xs text-slate-400">Call me at</p>
+                  <a href="tel:+8801601511360" className="text-sm font-semibold text-slate-200 hover:text-teal-400 transition-colors">
+                    +880 1601-511360
+                  </a>
+                </div>
+              </div>
+
+              {/* Location Card */}
+              <div className="flex items-center space-x-4 p-4 rounded-xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-sm">
+                <div className="p-3 bg-teal-500/10 text-teal-400 rounded-lg text-xl">
                   <FaMapMarkerAlt />
                 </div>
                 <div>
@@ -102,15 +145,6 @@ export default function Contact() {
                 >
                   <FaLinkedin className="text-lg" />
                 </a>
-                {/* <a
-                  href="https://twitter.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-3 bg-slate-900/80 hover:bg-slate-800 border border-slate-800 rounded-xl text-slate-300 hover:text-teal-400 transition duration-200"
-                  aria-label="Twitter"
-                >
-                  <FaTwitter className="text-lg" />
-                </a> */}
               </div>
             </div>
           </div>
@@ -182,10 +216,15 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-teal-500 hover:bg-teal-600 text-slate-950 font-bold text-sm px-8 py-3.5 rounded-xl transition duration-200 shadow-lg shadow-teal-500/10 cursor-pointer"
+                disabled={loading}
+                className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-teal-500 hover:bg-teal-600 disabled:bg-teal-500/50 text-slate-950 font-bold text-sm px-8 py-3.5 rounded-xl transition duration-200 shadow-lg shadow-teal-500/10 cursor-pointer disabled:cursor-not-allowed"
               >
-                <span>Send Message</span>
-                <FaPaperPlane className="text-xs" />
+                <span>{loading ? 'Sending...' : 'Send Message'}</span>
+                {loading ? (
+                  <FaSpinner className="animate-spin text-xs" />
+                ) : (
+                  <FaPaperPlane className="text-xs" />
+                )}
               </button>
             </form>
           </div>
