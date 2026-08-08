@@ -48,7 +48,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-5 md:py-20 bg-slate-950 text-white relative">
+    <section id="contact" className="py-5 md:py-20 bg-slate-950 text-white relative overflow-hidden">
       {/* Toast Notification Container */}
       <Toaster position="bottom-right" reverseOrder={false} />
 
