@@ -29,51 +29,8 @@ export default function About() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
-          {/* Left Column: Bio & Programming Hero Journey */}
-          <div className="lg:col-span-6 space-y-6 text-slate-300">
-
-            {/* Perfect Infinite Typeforward Animated Title */}
-            <h3 className="text-2xl sm:text-3xl font-bold text-white flex flex-wrap items-center">
-              {titleText.split("").map((char, index) => (
-                <motion.span
-                  key={index}
-                  animate={{
-                    opacity: [0, 1, 1, 0],
-                    y: [10, 0, 0, -5],
-                  }}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    repeatDelay: 1,
-                    delay: index * 0.1,
-                  }}
-                >
-                  {char === " " ? "\u00A0" : char}
-                </motion.span>
-              ))}
-            </h3>
-
-            <p className="leading-relaxed text-slate-400">
-              My tech journey started with a simple curiosity: how do modern websites and web apps actually work? To turn that curiosity into solid skills, I joined <span className="text-teal-400 font-semibold">Programming Hero</span>, which helped me build a strong foundation in Web Development.
-            </p>
-
-            <p className="leading-relaxed text-slate-400">
-              Through hands-on projects and practice, I gained expertise in the MERN stack—building interactive UIs with React, Next and Tailwind, and creating reliable backend APIs with Node.js and MongoDB. Today, I focus on building real-world web applications that run smoothly and offer a great user experience.
-            </p>
-
-            {/* Highlights List */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-              {highlights.map((item, index) => (
-                <div key={index} className="flex items-center space-x-2">
-                  <span className="text-teal-400 font-bold">✓</span>
-                  <span className="text-sm text-slate-300">{item}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Right Column: IDE Code Window */}
-          <div className="lg:col-span-6">
+          {/* IDE Code Window (Mobile-এ আগে দেখাবে, LG screen-এ বামে থাকবে) */}
+          <div className="lg:col-span-6 order-1 lg:order-1">
             <div className="w-full bg-slate-900/90 border border-slate-800 hover:border-teal-500/50 rounded-2xl shadow-2xl hover:shadow-teal-500/20 overflow-hidden backdrop-blur-md transition-all duration-300 group">
 
               {/* Code Window Header */}
@@ -142,6 +99,49 @@ export default function About() {
                 </div>
               </div>
 
+            </div>
+          </div>
+
+          {/* Bio & Journey Column (Mobile-এ পরে দেখাবে, LG screen-এ ডানে থাকবে) */}
+          <div className="lg:col-span-6 space-y-6 text-slate-300 order-2 lg:order-2">
+
+            {/* Perfect Infinite Typeforward Animated Title */}
+            <h3 className="text-2xl sm:text-3xl font-bold text-white flex flex-wrap items-center">
+              {titleText.split("").map((char, index) => (
+                <motion.span
+                  key={index}
+                  animate={{
+                    opacity: [0, 1, 1, 0],
+                    y: [10, 0, 0, -5],
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    repeatDelay: 1,
+                    delay: index * 0.1,
+                  }}
+                >
+                  {char === " " ? "\u00A0" : char}
+                </motion.span>
+              ))}
+            </h3>
+
+            <p className="leading-relaxed text-slate-400">
+              My tech journey started with a simple curiosity: how do modern websites and web apps actually work? To turn that curiosity into solid skills, I joined <span className="text-teal-400 font-semibold">Programming Hero</span>, which helped me build a strong foundation in Web Development.
+            </p>
+
+            <p className="leading-relaxed text-slate-400">
+              Through hands-on projects and practice, I gained expertise in the MERN stack—building interactive UIs with React, Next and Tailwind, and creating reliable backend APIs with Node.js and MongoDB. Today, I focus on building real-world web applications that run smoothly and offer a great user experience.
+            </p>
+
+            {/* Highlights List */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+              {highlights.map((item, index) => (
+                <div key={index} className="flex items-center space-x-2">
+                  <span className="text-teal-400 font-bold">✓</span>
+                  <span className="text-sm text-slate-300">{item}</span>
+                </div>
+              ))}
             </div>
           </div>
 

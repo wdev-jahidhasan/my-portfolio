@@ -48,14 +48,14 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-slate-950 text-white relative">
+    <section id="contact" className="py-0 lg:py-20 bg-slate-950 text-white relative">
       {/* Toast Notification Container */}
       <Toaster position="bottom-right" reverseOrder={false} />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Heading */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-6 lg:mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
             Get In{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-emerald-400 to-orange-400">
@@ -63,95 +63,23 @@ export default function Contact() {
             </span>
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-teal-400 to-orange-400 mx-auto mt-4 rounded-full" />
-          <p className="text-slate-400 mt-4 max-w-xl mx-auto text-sm sm:text-base">
-            Have a project in mind, a question? Feel free to drop a message!
-          </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          
-          {/* Left Column: Contact Info & Socials */}
-          <div className="lg:col-span-5 space-y-8">
-            <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-white">Let's talk about everything!</h3>
-              <p className="text-slate-400 text-sm leading-relaxed">
-                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
-              </p>
-            </div>
-
-            {/* Info Cards */}
-            <div className="space-y-4">
-              {/* Mail Card */}
-              <div className="flex items-center space-x-4 p-4 rounded-xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-sm">
-                <div className="p-3 bg-teal-500/10 text-teal-400 rounded-lg text-xl">
-                  <FaEnvelope />
-                </div>
-                <div>
-                  <p className="text-xs text-slate-400">Mail me at</p>
-                  <a href="mailto:wdev.jahidhasan@gmail.com" className="text-sm font-semibold text-slate-200 hover:text-teal-400 transition-colors">
-                    wdev.jahidhasan@gmail.com
-                  </a>
-                </div>
-              </div>
-
-              {/* Phone Card */}
-              <div className="flex items-center space-x-4 p-4 rounded-xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-sm">
-                <div className="p-3 bg-teal-500/10 text-teal-400 rounded-lg text-xl">
-                  <FaPhoneAlt />
-                </div>
-                <div>
-                  <p className="text-xs text-slate-400">Call me at</p>
-                  <a href="tel:+8801601511360" className="text-sm font-semibold text-slate-200 hover:text-teal-400 transition-colors">
-                    +880 1601-511360
-                  </a>
-                </div>
-              </div>
-
-              {/* Location Card */}
-              <div className="flex items-center space-x-4 p-4 rounded-xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-sm">
-                <div className="p-3 bg-teal-500/10 text-teal-400 rounded-lg text-xl">
-                  <FaMapMarkerAlt />
-                </div>
-                <div>
-                  <p className="text-xs text-slate-400">Location</p>
-                  <p className="text-sm font-semibold text-slate-200">
-                    Dhaka, Bangladesh
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Social Links */}
-            <div className="pt-2">
-              <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">
-                Connect on Socials
-              </p>
-              <div className="flex space-x-3">
-                <a
-                  href="https://github.com/wdev-jahidhasan"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-3 bg-slate-900/80 hover:bg-slate-800 border border-slate-800 rounded-xl text-slate-300 hover:text-teal-400 transition duration-200"
-                  aria-label="GitHub"
-                >
-                  <FaGithub className="text-lg" />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/wdev-jahidhasan"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-3 bg-slate-900/80 hover:bg-slate-800 border border-slate-800 rounded-xl text-slate-300 hover:text-teal-400 transition duration-200"
-                  aria-label="LinkedIn"
-                >
-                  <FaLinkedin className="text-lg" />
-                </a>
-              </div>
-            </div>
-          </div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:items-center">
 
           {/* Right Column: Contact Form */}
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-7 order-1 lg:order-2">
             <form onSubmit={handleSubmit} className="p-8 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-sm space-y-6">
+
+              <div className="border-b border-slate-800/80 pb-4 mb-2">
+                <h3 className="text-xl font-bold text-white flex items-center gap-2">
+                  Send a Direct Message
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-400 mt-1 leading-relaxed">
+                  Fill out the form below to send an email straight to my inbox. I&apos;ll get back to you as soon as possible!
+                </p>
+              </div>
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-xs font-medium text-slate-300 mb-2">
@@ -227,6 +155,85 @@ export default function Contact() {
                 )}
               </button>
             </form>
+          </div>
+
+          {/* Left Column: Contact Info & Socials */}
+          <div className="lg:col-span-5 space-y-8 order-2 lg:order-1">
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-white">Let's talk about everything!</h3>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
+              </p>
+            </div>
+
+            {/* Info Cards */}
+            <div className="space-y-4">
+              {/* Mail Card */}
+              <div className="flex items-center space-x-4 p-4 rounded-xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-sm">
+                <div className="p-3 bg-teal-500/10 text-teal-400 rounded-lg text-xl">
+                  <FaEnvelope />
+                </div>
+                <div>
+                  <p className="text-xs text-slate-400">Mail me at</p>
+                  <a href="mailto:wdev.jahidhasan@gmail.com" className="text-sm font-semibold text-slate-200 hover:text-teal-400 transition-colors">
+                    wdev.jahidhasan@gmail.com
+                  </a>
+                </div>
+              </div>
+
+              {/* Phone Card */}
+              <div className="flex items-center space-x-4 p-4 rounded-xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-sm">
+                <div className="p-3 bg-teal-500/10 text-teal-400 rounded-lg text-xl">
+                  <FaPhoneAlt />
+                </div>
+                <div>
+                  <p className="text-xs text-slate-400">Call me at</p>
+                  <a href="tel:+8801601511360" className="text-sm font-semibold text-slate-200 hover:text-teal-400 transition-colors">
+                    +880 1601-511360
+                  </a>
+                </div>
+              </div>
+
+              {/* Location Card */}
+              <div className="flex items-center space-x-4 p-4 rounded-xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-sm">
+                <div className="p-3 bg-teal-500/10 text-teal-400 rounded-lg text-xl">
+                  <FaMapMarkerAlt />
+                </div>
+                <div>
+                  <p className="text-xs text-slate-400">Location</p>
+                  <p className="text-sm font-semibold text-slate-200">
+                    Dhaka, Bangladesh
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Social Links */}
+            <div className="pt-2">
+              <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">
+                Connect on Socials
+              </p>
+              <div className="flex space-x-3">
+                <a
+                  href="https://github.com/wdev-jahidhasan"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 bg-slate-900/80 hover:bg-slate-800 border border-slate-800 rounded-xl text-slate-300 hover:text-teal-400 transition duration-200"
+                  aria-label="GitHub"
+                >
+                  <FaGithub className="text-lg" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/wdev-jahidhasan"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 bg-slate-900/80 hover:bg-slate-800 border border-slate-800 rounded-xl text-slate-300 hover:text-teal-400 transition duration-200"
+                  aria-label="LinkedIn"
+                >
+                  <FaLinkedin className="text-lg" />
+                </a>
+              </div>
+            </div>
           </div>
 
         </div>
