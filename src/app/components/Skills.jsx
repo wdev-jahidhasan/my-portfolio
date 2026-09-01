@@ -6,6 +6,7 @@ import {
   FaJsSquare,
   FaGitAlt,
   FaHtml5,
+  FaStripe,
 } from 'react-icons/fa';
 import {
   SiNextdotjs,
@@ -16,12 +17,14 @@ import {
   SiPostgresql,
   SiJsonwebtokens,
 } from 'react-icons/si';
-import { TbShieldCheck } from 'react-icons/tb';
+import { TbShieldCheck, TbPhoto } from 'react-icons/tb';
 
 const skills = [
   { name: 'HTML5', icon: FaHtml5, color: 'text-orange-600' },
+  { name: 'Stripe', icon: FaStripe, color: 'text-indigo-400' }, 
+  { name: 'ImgBB API', icon: TbPhoto, color: 'text-cyan-500' },
   { name: 'JavaScript', icon: FaJsSquare, color: 'text-yellow-400' },
-  // { name: 'TypeScript', icon: SiTypescript, color: 'text-blue-500' },
+  { name: 'TypeScript', icon: SiTypescript, color: 'text-blue-500' },
   { name: 'React.js', icon: FaReact, color: 'text-cyan-400' },
   { name: 'Next.js', icon: SiNextdotjs, color: 'text-white' },
   { name: 'Tailwind CSS', icon: SiTailwindcss, color: 'text-sky-400' },
@@ -60,7 +63,7 @@ export default function Skills() {
             return (
               <div
                 key={index}
-                className="flex items-center space-x-4 px-6 py-4 rounded-xl bg-slate-900/60 border border-slate-800/80 backdrop-blur-sm hover:border-teal-500/50 hover:bg-slate-900 transition duration-300 group"
+                className="flex items-center space-x-4 px-6 py-4 rounded-xl bg-slate-900/60 border border-slate-800/85 backdrop-blur-sm hover:border-teal-500/50 hover:bg-slate-900 transition duration-300 group"
               >
                 <IconComponent className={`text-3xl ${skill.color} transition-transform duration-300 group-hover:scale-110`} />
                 <span className="text-base font-semibold text-slate-200 group-hover:text-white transition-colors">

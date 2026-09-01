@@ -1,5 +1,31 @@
 export const projectsData = [
   {
+    id: 'arthub',
+    title: 'ArtHub',
+    description: 'A modern full-stack digital marketplace connecting art collectors and buyers with talented artists to discover, buy, and manage original artworks seamlessly.',
+    fullDescription: 'ArtHub is a full-stack digital platform designed to connect art lovers, collectors, and buyers with talented artists, featuring a multi-role user system, secure Stripe payments, and advanced artwork filtering and analytics.',
+    techStack: ['Next.js', 'Tailwind CSS', 'Framer Motion', 'Node.js', 'Express.js', 'MongoDB', 'Better Auth', 'Stripe', 'imgBB API'],
+    liveUrl: 'https://arthub-shop-client.vercel.app/',
+    githubUrl: 'https://github.com/wdev-jahidhasan/arthub-client',
+    imageUrl: '/images/arthub.png',
+    features: [
+      'Multi-Role User System (Users, Artists, Admins with distinct dashboards)',
+      'Advanced Browse, Search, Category Filtering, & Sorting with Pagination',
+      'Secure Stripe Checkout & Tier-Based Subscriptions (Free, Pro, Premium)',
+      'Interactive Reviews & Comments after Successful Payment',
+      'Comprehensive Admin Management & Sales/Revenue Analytics',
+      'Multiple CRUD operations'
+    ],
+    challenges: [
+      'Implementing role-based access control (RBAC)',
+      'Integrate Stripe payment method for the first time'
+    ],
+    futurePlans: [
+      'Expand artist payout automation and multi-currency support.',
+      'Introduce real-time chat between buyers and artists for custom commissions.'
+    ]
+  },
+  {
     id: 'drive-fleet',
     title: 'Drive Fleet',
     description: 'A modern, responsive full-stack car rental platform where users can browse available cars, book rentals, manage their bookings, and add their own cars for rent.',
@@ -12,7 +38,8 @@ export const projectsData = [
       'User Authentication & JWT Security',
       'Car Booking & Rental Management System',
       'Real-time Availability Search',
-      'User Car Listing Dashboard'
+      'User Car Listing Dashboard',
+      'Search, Category Filtering, & Pagination',
     ],
     challenges: [
       'Implementing secure JWT authorization and protected routes for backend API endpoints.'

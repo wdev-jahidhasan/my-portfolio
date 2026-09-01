@@ -21,8 +21,8 @@ export default function Projects() {
           <div className="w-16 h-1 bg-gradient-to-r from-teal-400 to-orange-400 mx-auto mt-4 rounded-full" />
         </div>
 
-        {/* Projects Grid: 3*1 layout on medium/large screens */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Projects Grid: 2*1 layout on medium/large screens */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projectsData.map((project) => (
             <div
               key={project.id}

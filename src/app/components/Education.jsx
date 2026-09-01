@@ -8,7 +8,7 @@ export default function Education() {
       session: '2022 - 2023 Session',
       status: 'Completed',
       description:
-        'Advanced studies focusing on linguistics, literature analysis, and analytical thinking, while simultaneously mastering self-taught modern web technologies and software engineering practices.',
+        'Advanced academic studies focusing on linguistics, literature analysis, and research methodology at the University of Dhaka.',
       highlights: ['Linguistic Analysis', 'Critical Thinking', 'Research & Methodology'],
     },
     {
@@ -17,8 +17,8 @@ export default function Education() {
       session: '2018 - 2019 Session',
       status: 'Completed',
       description:
-        'Developed strong problem-solving capabilities, adaptability, and high attention to detail, which laid a solid foundation for transitioning into professional MERN stack development.',
-      highlights: ['Analytical Problem Solving', 'Communication', 'Structured Logic'],
+        'Foundational studies in classical and modern literature, syntax, and comprehensive textual analysis.',
+      highlights: ['Textual Analysis', 'Literary History', 'Academic Writing'],
     },
   ];
 
@@ -47,7 +47,7 @@ export default function Education() {
           {/* Vertical Timeline Line */}
           <div className="absolute left-4 sm:left-1/2 top-0 bottom-0 w-0.5 bg-slate-800 -translate-x-1/2 hidden sm:block" />
 
-          <div className="space-y-12">
+          <div className="space-y-6 sm:space-y-8">
             {educationData.map((item, index) => {
               const isEven = index % 2 === 0;
 
