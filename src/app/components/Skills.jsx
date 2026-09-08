@@ -21,10 +21,10 @@ import { TbShieldCheck, TbPhoto } from 'react-icons/tb';
 
 const skills = [
   { name: 'HTML5', icon: FaHtml5, color: 'text-orange-600' },
-  { name: 'Stripe', icon: FaStripe, color: 'text-indigo-400' }, 
+  { name: 'Stripe', icon: FaStripe, color: 'text-indigo-400' },
   { name: 'ImgBB API', icon: TbPhoto, color: 'text-cyan-500' },
   { name: 'JavaScript', icon: FaJsSquare, color: 'text-yellow-400' },
-  { name: 'TypeScript', icon: SiTypescript, color: 'text-blue-500' },
+  // { name: 'TypeScript', icon: SiTypescript, color: 'text-blue-500' },
   { name: 'React.js', icon: FaReact, color: 'text-cyan-400' },
   { name: 'Next.js', icon: SiNextdotjs, color: 'text-white' },
   { name: 'Tailwind CSS', icon: SiTailwindcss, color: 'text-sky-400' },
@@ -55,7 +55,7 @@ export default function Skills() {
 
       {/* Edge Blur Overlays */}
       <div className="relative w-full overflow-hidden before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-20 before:bg-gradient-to-r before:from-slate-950 before:to-transparent after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-20 after:bg-gradient-to-l after:from-slate-950 after:to-transparent">
-        
+
         {/* Scrolling Track */}
         <div className="flex w-max space-x-6 animate-scroll hover:[animation-play-state:paused] py-2">
           {duplicatedSkills.map((skill, index) => {

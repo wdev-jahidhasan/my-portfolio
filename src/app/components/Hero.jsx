@@ -38,7 +38,7 @@ export default function Hero() {
             </Link>
 
             <a
-              href="/resume.pdf"
+              href="/jahid-hasan-resume.pdf"
               download
               className="px-6 py-3.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 text-slate-300 border border-slate-700/80 font-medium text-sm transition-all duration-200 flex items-center gap-2 backdrop-blur-sm hover:scale-105"
             >
